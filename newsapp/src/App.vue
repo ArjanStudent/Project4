@@ -1,12 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <news-header/>
     <router-view/>
   </div>
 </template>
+
+<script>
+import NewsHeader from '@/components/NewsHeader'
+export default {
+  name: 'App',
+  components: {
+    NewsHeader
+  },
+  beforeCreate: function() {
+    this.$store.dispatch("fetchArticles");
+  }
+}
+</script>
+
 
 <style lang="scss">
 #app {
