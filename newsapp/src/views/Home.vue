@@ -1,17 +1,30 @@
 <template>
-  <news-grid/>
+  <div class="o-home">
+    <p class="e-header">Newest Headline</p>
+    <headline-container/>
+    <p class="e-header">Latest Articles</p>
+    <article-container/>
+  </div>
+
 </template>
 
 <script>
 // @ is an alias to /src
-import NewsGrid from '@/components/NewsGrid'
+import HeadlineContainer from '@/components/HeadlineContainer'
+import ArticleContainer from '@/components/ArticleContainer'
 
 
 export default {
 
   name: 'home',
   components:{
-    NewsGrid
+    ArticleContainer,
+    HeadlineContainer
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "./src/style/elements/elements.title";
+@import "./src/style/objects/objects.home";
+</style>

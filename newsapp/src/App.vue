@@ -1,40 +1,31 @@
 <template>
+
   <div id="app">
+    <!-- <language-bar/> -->
     <news-header/>
     <router-view/>
   </div>
 </template>
 
+
 <script>
+
 import NewsHeader from '@/components/NewsHeader'
 export default {
   name: 'App',
   components: {
-    NewsHeader
+    NewsHeader,
+
   },
   beforeCreate: function() {
     this.$store.dispatch("fetchArticles");
+    this.$store.dispatch("fetchHeadlines");
   }
 }
 </script>
 
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import "./src/style/base";
 </style>
+
